@@ -1,6 +1,7 @@
 package com.example.kafkastreams.alerting.topology;
 
 import com.example.kafkastreams.alerting.model.ActivityStatus;
+import com.example.kafkastreams.alerting.model.ActivityStatusSerde;
 import com.example.kafkastreams.model.JsonDoc;
 import com.example.kafkastreams.model.JsonDocSerde;
 import com.example.kafkastreams.stateless.topology.JsonEnrichmentTopologyBuilder;
@@ -39,23 +40,25 @@ public class SuspiciousActivityMonitorTopology {
                 .aggregate(ActivityStatus::new,
                         (key, jsonDoc, accumulator) -> {
                             accumulator.setUser(key);
+                            accumulator.incrementTotalRequestsCount();
+
                             String permissionGrant = (String) jsonDoc.json().get("permission");
                             if ("DENY".equals(permissionGrant)) {
                                 accumulator.incrementDeniedRequestsCount();
-                            } else {
-                                accumulator.incrementAllowedRequestsCount();
                             }
 
-                            double ratio = accumulator.getDeniedRequestsCount() * 1.0 / accumulator.getAllowedRequestsCount();
+                            double ratio = accumulator.getDeniedRequestsCount() * 1.0 / accumulator.getTotalRequestsCount();
                             accumulator.setDeniedRatio(ratio);
                             return accumulator;
                         },
                         Materialized.<String, ActivityStatus, KeyValueStore<Bytes, byte[]>>as("ActivityMonitorStore")
                                 .withKeySerde(Serdes.String())
-//                                .withValueSerde(Serdes.Long())
-                );
-//                .toStream()
-//                .to("user-requests-counter-output",  Produced.with(Serdes.String(), Serdes.Long()));
+                                .withValueSerde(new ActivityStatusSerde())
+                )
+                .toStream()
+                .filter((key, activityStatus) -> activityStatus.getDeniedRatio() > 0.5)
+                .peek((key, activityStatus) -> logger.warn("ALERT: Suspicious activity detected for user {}. Denied ratio: {}", key, activityStatus.getDeniedRatio()))
+                .to("suspicious-user-activity-output",  Produced.with(Serdes.String(), new ActivityStatusSerde()));
         return streamsBuilder.build();
     }
 }

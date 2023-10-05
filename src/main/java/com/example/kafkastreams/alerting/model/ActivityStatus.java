@@ -2,8 +2,8 @@ package com.example.kafkastreams.alerting.model;
 
 public class ActivityStatus {
     private String user;
-    private Long allowedRequestsCount;
-    private Long deniedRequestsCount;
+    private Long totalRequestsCount = 0L;
+    private Long deniedRequestsCount = 0L;
     private Double deniedRatio;
 
     public ActivityStatus() {
@@ -11,7 +11,7 @@ public class ActivityStatus {
 
     public ActivityStatus(String user, Long allowedRequestsCount, Long deniedRequestsCount, Double deniedRatio) {
         this.user = user;
-        this.allowedRequestsCount = allowedRequestsCount;
+        this.totalRequestsCount = allowedRequestsCount;
         this.deniedRequestsCount = deniedRequestsCount;
         this.deniedRatio = deniedRatio;
     }
@@ -24,12 +24,12 @@ public class ActivityStatus {
         this.user = user;
     }
 
-    public Long getAllowedRequestsCount() {
-        return allowedRequestsCount;
+    public Long getTotalRequestsCount() {
+        return totalRequestsCount;
     }
 
-    public void incrementAllowedRequestsCount() {
-        this.allowedRequestsCount++;
+    public void incrementTotalRequestsCount() {
+        this.totalRequestsCount++;
     }
 
     public Long getDeniedRequestsCount() {

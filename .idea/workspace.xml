@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cbb9ecf-c063-4458-8cde-8b186755bb56" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/model/ActivityStatusSerde.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/SuspiciousActivityMonitorApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/SuspiciousActivityMonitorApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/model/ActivityStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/model/ActivityStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/topology/SuspiciousActivityMonitorTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/topology/SuspiciousActivityMonitorTopology.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/model/JsonDoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/model/JsonDoc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/model/JsonDocSerde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/model/JsonDocSerde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateful/UserRequestsCounterApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateful/UserRequestsCounterApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateful/topology/UserRequestsAggregationTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateful/topology/UserRequestsAggregationTopology.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/EnrichmentStreamsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/EnrichmentStreamsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/EnrichmentDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/EnrichmentDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/EnrichmentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/EnrichmentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/JsonEnrichmentProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/JsonEnrichmentProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/topology/JsonEnrichmentTopologyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/topology/JsonEnrichmentTopologyBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +61,11 @@
       <recent name="$PROJECT_DIR$/docker/scripts" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.kafkastreams.alerting.model" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.UserRequestsCounterApp">
+  <component name="RunManager" selected="Application.SuspiciousActivityMonitorApp">
     <configuration name="EnrichmentStreamsApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.kafkastreams.stateless.EnrichmentStreamsApp" />
       <module name="kafka-streams-demo" />
@@ -89,6 +79,19 @@
         <option name="credential" />
         <option name="region" />
         <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuspiciousActivityMonitorApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.kafkastreams.alerting.SuspiciousActivityMonitorApp" />
+      <module name="kafka-streams-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.kafkastreams.alerting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,6 +138,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.SuspiciousActivityMonitorApp" />
       <item itemvalue="Application.UserRequestsCounterApp" />
       <item itemvalue="Application.EnrichmentStreamsApp" />
       <item itemvalue="Docker.docker-compose.yml.broker: Compose Deployment" />
@@ -142,8 +146,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserRequestsCounterApp" />
+        <item itemvalue="Application.SuspiciousActivityMonitorApp" />
         <item itemvalue="Application.EnrichmentStreamsApp" />
+        <item itemvalue="Application.UserRequestsCounterApp" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.broker: Compose Deployment" />
       </list>
@@ -159,6 +164,7 @@
       <updated>1696409195930</updated>
       <workItem from="1696409197090" duration="19320000" />
       <workItem from="1696440080773" duration="1613000" />
+      <workItem from="1696486272900" duration="3521000" />
     </task>
     <servers />
   </component>
