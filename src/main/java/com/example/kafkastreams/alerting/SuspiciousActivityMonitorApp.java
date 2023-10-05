@@ -1,6 +1,6 @@
-package com.example.kafkastreams.stateful;
+package com.example.kafkastreams.alerting;
 
-import com.example.kafkastreams.stateful.topology.UserRequestsAggregationTopology;
+import com.example.kafkastreams.alerting.topology.SuspiciousActivityMonitorTopology;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.Serdes;
@@ -11,12 +11,16 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
-public class UserRequestsCounterApp {
+/**
+ * For purpose of this demo suspicious activity is defined by average of DENY / Allow ratio
+ * When ratios is higher than 0.5 it counts as suspicious activity
+ */
+public class SuspiciousActivityMonitorApp {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserRequestsCounterApp.class);
+    private static final Logger logger = LoggerFactory.getLogger(SuspiciousActivityMonitorApp.class);
     @SuppressWarnings("resource")
     public static void main(String[] args) {
-        var topology = new UserRequestsAggregationTopology().buildTopology();
+        var topology = new SuspiciousActivityMonitorTopology().buildTopology();
         logger.info("{}", topology.describe());
 
         var kafkaStreams = new KafkaStreams(topology, streamsConfig());
@@ -28,7 +32,7 @@ public class UserRequestsCounterApp {
     private static Properties streamsConfig() {
         var properties = new Properties();
 
-        properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "user-requests-counter-app");
+        properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "suspicious-activity-monitor-app");
         properties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 30 * 1000);
         properties.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 2);

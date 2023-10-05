@@ -1,4 +1,4 @@
-package com.example.kafkastreams.stateless;
+package com.example.kafkastreams.stateless.enrichments;
 
 public enum EnrichmentType {
     ADD_FIELD,

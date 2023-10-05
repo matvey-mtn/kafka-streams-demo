@@ -1,4 +1,6 @@
-package com.example.kafkastreams.stateless;
+package com.example.kafkastreams.stateless.enrichments;
+
+import com.example.kafkastreams.model.JsonDoc;
 
 import java.util.List;
 

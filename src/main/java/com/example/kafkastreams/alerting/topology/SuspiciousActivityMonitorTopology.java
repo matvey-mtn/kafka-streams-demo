@@ -1,5 +1,6 @@
-package com.example.kafkastreams.stateful.topology;
+package com.example.kafkastreams.alerting.topology;
 
+import com.example.kafkastreams.alerting.model.ActivityStatus;
 import com.example.kafkastreams.model.JsonDoc;
 import com.example.kafkastreams.model.JsonDocSerde;
 import com.example.kafkastreams.stateless.topology.JsonEnrichmentTopologyBuilder;
@@ -13,7 +14,7 @@ import org.apache.kafka.streams.state.KeyValueStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class UserRequestsAggregationTopology {
+public class SuspiciousActivityMonitorTopology {
 
     @SuppressWarnings("FieldCanBeLocal")
     private final String inputTopicName = "json-enrichment-output";
@@ -35,10 +36,23 @@ public class UserRequestsAggregationTopology {
                     return new KeyValue<>(user, jsonDoc);
                 })
                 .groupByKey(Grouped.with(Serdes.String(), jsonDocSerde))
-                .count(Named.as("UserRequestsAggregation"),
-                        Materialized.<String, Long, KeyValueStore<Bytes, byte[]>>as("UserRequestsCountStore")
+                .aggregate(ActivityStatus::new,
+                        (key, jsonDoc, accumulator) -> {
+                            accumulator.setUser(key);
+                            String permissionGrant = (String) jsonDoc.json().get("permission");
+                            if ("DENY".equals(permissionGrant)) {
+                                accumulator.incrementDeniedRequestsCount();
+                            } else {
+                                accumulator.incrementAllowedRequestsCount();
+                            }
+
+                            double ratio = accumulator.getDeniedRequestsCount() * 1.0 / accumulator.getAllowedRequestsCount();
+                            accumulator.setDeniedRatio(ratio);
+                            return accumulator;
+                        },
+                        Materialized.<String, ActivityStatus, KeyValueStore<Bytes, byte[]>>as("ActivityMonitorStore")
                                 .withKeySerde(Serdes.String())
-                                .withValueSerde(Serdes.Long())
+//                                .withValueSerde(Serdes.Long())
                 );
 //                .toStream()
 //                .to("user-requests-counter-output",  Produced.with(Serdes.String(), Serdes.Long()));

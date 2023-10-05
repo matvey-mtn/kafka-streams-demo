@@ -5,30 +5,150 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cbb9ecf-c063-4458-8cde-8b186755bb56" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/SuspiciousActivityMonitorApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/SuspiciousActivityMonitorApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/model/ActivityStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/model/ActivityStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/topology/SuspiciousActivityMonitorTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/topology/SuspiciousActivityMonitorTopology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/model/JsonDoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/model/JsonDoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/model/JsonDocSerde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/model/JsonDocSerde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateful/UserRequestsCounterApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateful/UserRequestsCounterApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateful/topology/UserRequestsAggregationTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateful/topology/UserRequestsAggregationTopology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/EnrichmentStreamsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/EnrichmentStreamsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/EnrichmentDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/EnrichmentDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/EnrichmentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/EnrichmentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/JsonEnrichmentProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/enrichments/JsonEnrichmentProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/topology/JsonEnrichmentTopologyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/stateless/topology/JsonEnrichmentTopologyBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Record" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2WI9OZMRHHSaau5AnFzKEaIaSXU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/matvey/git/kafka-streams-demo/src/main/java/com/example/kafkastreams/alerting&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting" />
+      <recent name="$PROJECT_DIR$/docker/scripts" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.UserRequestsCounterApp">
+    <configuration name="EnrichmentStreamsApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.kafkastreams.stateless.EnrichmentStreamsApp" />
+      <module name="kafka-streams-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.kafkastreams.stateless.enrichments.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRequestsCounterApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.kafkastreams.stateful.UserRequestsCounterApp" />
+      <module name="kafka-streams-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.kafkastreams.stateful.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.broker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="broker" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.UserRequestsCounterApp" />
+      <item itemvalue="Application.EnrichmentStreamsApp" />
+      <item itemvalue="Docker.docker-compose.yml.broker: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UserRequestsCounterApp" />
+        <item itemvalue="Application.EnrichmentStreamsApp" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.broker: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,8 +157,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696409195930</updated>
-      <workItem from="1696409197090" duration="1000" />
+      <workItem from="1696409197090" duration="19320000" />
+      <workItem from="1696440080773" duration="1613000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

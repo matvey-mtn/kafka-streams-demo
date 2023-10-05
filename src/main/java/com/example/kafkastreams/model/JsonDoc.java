@@ -1,4 +1,4 @@
-package com.example.kafkastreams.stateless.model;
+package com.example.kafkastreams.model;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package com.example.kafkastreams.stateless.model;
+package com.example.kafkastreams.model;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
