@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cbb9ecf-c063-4458-8cde-8b186755bb56" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/model/ActivityStatusSerde.java" afterDir="false" />
+    <list default="true" id="4cbb9ecf-c063-4458-8cde-8b186755bb56" name="Changes" comment="Add suspicious activity monitor stream">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/model/ActivityStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/model/ActivityStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/topology/SuspiciousActivityMonitorTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkastreams/alerting/topology/SuspiciousActivityMonitorTopology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +25,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -65,7 +67,12 @@
       <recent name="com.example.kafkastreams.alerting.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SuspiciousActivityMonitorApp">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn wrapper:wrapper" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="EnrichmentStreamsApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.kafkastreams.stateless.EnrichmentStreamsApp" />
       <module name="kafka-streams-demo" />
@@ -146,11 +153,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.broker: Compose Deployment" />
         <item itemvalue="Application.SuspiciousActivityMonitorApp" />
         <item itemvalue="Application.EnrichmentStreamsApp" />
         <item itemvalue="Application.UserRequestsCounterApp" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.broker: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -164,8 +171,19 @@
       <updated>1696409195930</updated>
       <workItem from="1696409197090" duration="19320000" />
       <workItem from="1696440080773" duration="1613000" />
-      <workItem from="1696486272900" duration="3521000" />
+      <workItem from="1696486272900" duration="6925000" />
+      <workItem from="1696605127638" duration="1165000" />
+      <workItem from="1696606339569" duration="699000" />
     </task>
+    <task id="LOCAL-00001" summary="Add suspicious activity monitor stream">
+      <option name="closed" value="true" />
+      <created>1696491036657</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696491036657</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,5 +199,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add suspicious activity monitor stream" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add suspicious activity monitor stream" />
   </component>
 </project>

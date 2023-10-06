@@ -26,6 +26,7 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: 'PLAINTEXT'
       KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      KAFKA_NUM_PARTITIONS: 4
     volumes:
       - ./docker/scripts/workaround.sh:/tmp/workaround.sh
     command: "bash -c '/tmp/workaround.sh && /etc/confluent/docker/run'"
