@@ -12,15 +12,18 @@ public class JsonEnrichmentProcessor {
         this.enrichments = enrichments;
     }
 
-    public JsonDoc enrich(JsonDoc jsonDoc) {
+    public JsonDoc process(JsonDoc jsonDoc) {
         var json = jsonDoc.json();
 
         for (EnrichmentDefinition enrichmentDef : enrichments) {
             switch (enrichmentDef.type()) {
-                case ADD_FIELD -> json.put(enrichmentDef.fieldName(), enrichmentDef.fieldValue());
+                case ADD_FIELD -> json.put(
+                        enrichmentDef.fieldName(), enrichmentDef.fieldValue()
+                );
                 case REMOVE_FIELD -> json.remove(enrichmentDef.fieldName());
                 case TO_LOWER_CASE -> json.put(enrichmentDef.fieldName(), json.get(enrichmentDef.fieldName()).toString().toLowerCase());
-                case TO_UPPER_CASE -> json.put(enrichmentDef.fieldName(), json.get(enrichmentDef.fieldName()).toString().toUpperCase());
+                case TO_UPPER_CASE ->
+                        json.put(enrichmentDef.fieldName(), json.get(enrichmentDef.fieldName()).toString().toUpperCase());
                 case CONVERT_TO_INTEGER -> json.put(enrichmentDef.fieldName(), Integer.parseInt(json.get(enrichmentDef.fieldName()).toString()));
                 default -> throw new IllegalStateException("Unexpected value: " + enrichmentDef.type());
             }

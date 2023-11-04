@@ -29,7 +29,8 @@ services:
       KAFKA_NUM_PARTITIONS: 4
     volumes:
       - ./docker/scripts/workaround.sh:/tmp/workaround.sh
-    command: "bash -c '/tmp/workaround.sh && /etc/confluent/docker/run'"
+      - ./docker/scripts/create-topics.sh:/tmp/create-topics.sh
+    command: "bash -c '/tmp/workaround.sh && /tmp/create-topics.sh & /etc/confluent/docker/run'"
     healthcheck:
       test: echo srvr | nc -z broker 9092 || exit 1
       interval: 5s
@@ -43,7 +44,7 @@ services:
     ports:
       - "18080:8080"
     environment:
-      KAFKA_CLUSTERS_0_NAME: "cloud-fetchers-cluster"
+      KAFKA_CLUSTERS_0_NAME: "kafka-streams-cluster"
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: "broker:29092"
       KAFKA_CLUSTERS_0_METRICS_PORT: 9101
       DYNAMIC_CONFIG_ENABLED: 'true'

@@ -28,7 +28,9 @@ public class EnrichmentStreamsApp {
                 new EnrichmentDefinition("requestedResourceId", null, EnrichmentType.CONVERT_TO_INTEGER)
         ));
 
-        var topology = new JsonEnrichmentTopologyBuilder(jsonEnrichmentProcessor).buildTopology();
+        var topology = new JsonEnrichmentTopologyBuilder(jsonEnrichmentProcessor)
+                .buildTopology();
+
         logger.info("{}", topology.describe());
         var kafkaStreams = new KafkaStreams(topology, streamsConfig());
         kafkaStreams.start();
@@ -42,7 +44,7 @@ public class EnrichmentStreamsApp {
         properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "json-enrichments-app");
         properties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 30 * 1000);
-        properties.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 2);
+        properties.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 1);
         properties.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, 1);
         properties.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 50 * 1024 * 1024);
         properties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.StringSerde.class);

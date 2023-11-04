@@ -8,7 +8,6 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.kstream.Consumed;
 import org.apache.kafka.streams.kstream.KStream;
-import org.apache.kafka.streams.kstream.Named;
 import org.apache.kafka.streams.kstream.Produced;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,17 +26,15 @@ public class JsonEnrichmentTopologyBuilder {
 
     public Topology buildTopology() {
         logger.info("Building topology...");
-
-        var jsonDocSerde = new JsonDocSerde();
         var streamsBuilder = new StreamsBuilder();
 
         KStream<String, JsonDoc> stream = streamsBuilder.stream(
                 inputTopicName,
-                Consumed.with(Serdes.String(), jsonDocSerde)
+                Consumed.with(Serdes.String(), new JsonDocSerde())
         );
 
-        stream.mapValues(jsonEnrichmentProcessor::enrich, Named.as("JsonEnrichmentProcessor"))
-                .to("json-enrichment-output", Produced.valueSerde(jsonDocSerde));
+        stream.mapValues(jsonEnrichmentProcessor::process)
+                .to("json-enrichment-output", Produced.valueSerde(new JsonDocSerde()));
 
         return streamsBuilder.build();
     }
