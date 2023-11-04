@@ -27,7 +27,8 @@ All examples are written in Java. I didn't use other programming languages delib
 
 1. compile the code using `mvnw clean install` or `mnvw.cmd clean install` for windows
 2. run the docker-compose: `docker-compose up -d`
-3. open kafka-ui http://localhost:18080/ and create a input topic called `json-enrichment`
+   3. init script defined in the `docker/scripts/create-topics.sh` will pre-create 3 topics: `json-enrichment`, `json-enrichment-output`, and `suspicious-user-activity-output`
+3. open kafka-ui http://localhost:18080/ and check that topics have been created
 4. start producing json records to the `json-enrichment` using producer mentioned in the prerequisites
 3. go to one of the following classes: `com.example.kafkastreams.stateless.EnrichmentStreamsApp`, `com.example.kafkastreams.stateful.UserRequestsCounterApp`, or `com.example.kafkastreams.alerting.SuspiciousActivityMonitorApp` and run the main function.
 4. :exclamation: **note that EnrichmentStreamsApp is always required to run for other Apps to work** :exclamation:. UserRequestsCounterApp and SuspiciousActivityMonitorApp use `json-enrichment-output` topic as their input topic.

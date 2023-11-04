@@ -14,6 +14,7 @@ import java.util.Properties;
 public class UserRequestsCounterApp {
 
     private static final Logger logger = LoggerFactory.getLogger(UserRequestsCounterApp.class);
+
     @SuppressWarnings("resource")
     public static void main(String[] args) {
         var topology = new UserRequestsAggregationTopology().buildTopology();
