@@ -26,16 +26,20 @@ public class JsonEnrichmentTopologyBuilder {
 
     public Topology buildTopology() {
         logger.info("Building topology...");
+        /* initialize streams builder */
         var streamsBuilder = new StreamsBuilder();
 
+        /* use streams builder to create a stream */
         KStream<String, JsonDoc> stream = streamsBuilder.stream(
                 inputTopicName,
                 Consumed.with(Serdes.String(), new JsonDocSerde())
         );
 
+        /* use stream to transform json documents and produce the result to output topic */
         stream.mapValues(jsonEnrichmentProcessor::process)
                 .to("json-enrichment-output", Produced.valueSerde(new JsonDocSerde()));
 
+        /* return topology */
         return streamsBuilder.build();
     }
 
